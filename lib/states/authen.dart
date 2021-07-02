@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingmall/utility/my_constant.dart';
+import 'package:shoppingmall/widgets/show_image.dart';
 
 class Authen extends StatefulWidget {
-  const Authen({ Key? key }) : super(key: key);
+  const Authen({Key? key}) : super(key: key);
 
   @override
   _AuthenState createState() => _AuthenState();
@@ -10,8 +12,14 @@ class Authen extends StatefulWidget {
 class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Text('This is Authen'),
+      body: SafeArea(
+        child: Container(
+          width: size*0.6,
+          child: ShowImage(path: MyConstant.image1),
+        ),
+      ),
     );
   }
 }
