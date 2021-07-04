@@ -28,10 +28,29 @@ class _AuthenState extends State<Authen> {
               buildAppName(),
               buildUser(size),
               buildPassword(size),
+              buildLogin(size),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Row buildLogin(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(
+              vertical: 16), // symmetric เป็นกำหนดเป้นคู่ เช่น ด้านบน-ด้านล่าง
+          width: size * 0.6,
+          child: ElevatedButton(
+            style: MyConstant().myButtonStyle(),
+            onPressed: () {},
+            child: Text('Login'),
+          ),
+        ),
+      ],
     );
   }
 
