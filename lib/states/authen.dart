@@ -19,13 +19,17 @@ class _AuthenState extends State<Authen> {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          children: [
-            buidImage(size),
-            buildAppName(),
-            buildUser(size),
-            buildPassword(size),
-          ],
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+          behavior: HitTestBehavior.opaque,
+          child: ListView(
+            children: [
+              buidImage(size),
+              buildAppName(),
+              buildUser(size),
+              buildPassword(size),
+            ],
+          ),
         ),
       ),
     );
@@ -71,18 +75,20 @@ class _AuthenState extends State<Authen> {
             obscureText: statusRedEye,
             decoration: InputDecoration(
               suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      statusRedEye = !statusRedEye;
-                    });
-                  },
-                  icon: statusRedEye ? Icon(
-                    Icons.remove_red_eye,
-                    color: MyConstant.dark,
-                  ) : Icon(
-                    Icons.remove_red_eye_outlined,
-                    color: MyConstant.dark,
-                  ),
+                onPressed: () {
+                  setState(() {
+                    statusRedEye = !statusRedEye;
+                  });
+                },
+                icon: statusRedEye
+                    ? Icon(
+                        Icons.remove_red_eye,
+                        color: MyConstant.dark,
+                      )
+                    : Icon(
+                        Icons.remove_red_eye_outlined,
+                        color: MyConstant.dark,
+                      ),
               ),
               labelStyle: MyConstant().h3Style(),
               labelText: 'Password :',
