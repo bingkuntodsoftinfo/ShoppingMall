@@ -11,9 +11,9 @@ final Map<String, WidgetBuilder> map = {
   '/authen': (BuildContext context) =>
       Authen(), //Authen() เขียนย่อมาจาก Class object = new Class
   '/createAccount': (BuildContext context) => CreateAccount(),
-  'buyerService': (BuildContext context) => BuyerService(),
-  'salerService': (BuildContext context) => SalreService(),
-  'riderService': (BuildContext context) => RiderService(),
+  '/buyerService': (BuildContext context) => BuyerService(),
+  '/salerService': (BuildContext context) => SalreService(),
+  '/riderService': (BuildContext context) => RiderService(),
 };
 
 String? initialRoute;
